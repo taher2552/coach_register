@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Registration - BookMyPlayer</title>
+<style>
+  :root {
+    --text-color: #ECEFF1;
+    --card-background: rgba(38, 50, 56, 0.85);
+    --button-color: #FFC107;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #000;
+    overflow: hidden;
+  }
+
+  .stars, .twinkling, .shooting-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+
+  .stars {
+    background: url('stars.png') repeat;
+    background-size: cover;
+  }
+
+  .twinkling {
+    background: transparent url('twinkling.png') repeat;
+    background-size: 1000px 1000px;
+    animation: moveTwinkling 50s linear infinite;
+  }
+
+  .shooting-stars {
+    background: transparent url('shooting-stars.png') repeat;
+    background-size: 1000px 1000px;
+    animation: moveShootingStars 50s linear infinite;
+  }
+
+  @keyframes moveTwinkling {
+    from { background-position: 0 0; }
+    to { background-position: -1000px 1000px; }
+  }
+
+  @keyframes moveShootingStars {
+    from { background-position: 0 0; }
+    to { background-position: 1000px -1000px; }
+  }
+
+  .registration-card {
+    position: relative;
+    margin: 5% auto;
+    padding: 20px;
+    background: var(--card-background);
+    border-radius: 8px;
+    max-width: 500px;
+    color: var(--text-color);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+  }
+
+  .registration-card h2 {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #777;
+    background-color: #000;
+    color: #ddd;
+  }
+
+  .submit-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-color);
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit-btn:hover {
+    background-color: darken(var(--button-color), 10%);
+  }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="twinkling"></div>
+<div class="shooting-stars"></div>
+
+<div class="registration-card">
+  <h2>Coach Registration</h2>
+  <form>
+    <input type="text" placeholder="Name" required>
+    <input type="email" placeholder="Email" required>
+    <select>
+      <option value="" disabled selected>Sport</option>
+      <option value="football">Football</option>
+      <option value="basketball">Basketball</option>
+      <option value="tennis">Tennis</option>
+      <!-- Add more sports -->
+    </select>
+    <button type="submit" class="submit-btn">Register</button>
+  </form>
+</div>
+
+</body>
+</html>
